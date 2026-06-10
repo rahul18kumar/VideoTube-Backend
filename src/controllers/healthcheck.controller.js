@@ -11,11 +11,13 @@ const healthcheck = asyncHandler(async (req, res) => {
         new ApiResponse(
             200,
             {
-                status: "OK"
+                status: "OK",
+                timestamp: new Date()
             },
             "Server is running"
         )
     )
+    
 })
 
 export { healthcheck }
