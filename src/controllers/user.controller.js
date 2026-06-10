@@ -78,6 +78,11 @@ if (req.files && Array.isArray(req.files.coverImage)
     coverImageLocalPath = req.files.coverImage[0].path;
 }
 
+console.log("req.files:", req.files);
+console.log("avatarLocalPath:", avatarLocalPath);
+console.log("coverImageLocalPath:", coverImageLocalPath);
+
+
 if (!avatarLocalPath) {
     throw new ApiError(400, "Avatar File is required")
 }
