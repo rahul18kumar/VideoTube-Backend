@@ -1,4 +1,13 @@
-VideoTube Backend only 
+VideoTube is a backend system that provides APIs for:
+
+-- User Management
+-- Authentication
+-- Video Uploads
+-- Comments
+-- Likes
+-- Playlists
+-- Subscriptions
+-- Watch History
 
 Deployed on Render successfully 
 
