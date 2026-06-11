@@ -314,7 +314,7 @@ const user = await User.findByIdAndUpdate(
             email,      // or can be , email : email
         }
     },
-    {new:true}
+     {returnDocument: "after"},
 )
 .select("-password")
 
