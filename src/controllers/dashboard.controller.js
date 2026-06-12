@@ -7,8 +7,12 @@ import {ApiResponse} from "../utils/ApiResponse.js"
 import {asyncHandler} from "../utils/asyncHandler.js"
 
 const getChannelStats = asyncHandler(async (req, res) => {
+
+    const channelId = req.user?._id;
+    
     // channel stats like total video views, total subscribers, total videos, total likes etc.
       // total videos
+
     const totalVideos = await Video.countDocuments({
         owner: channelId
     })

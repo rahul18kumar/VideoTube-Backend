@@ -20,11 +20,14 @@ const generateAccessAndRefereshTokens = async(userId) =>{
 
         return {accessToken, refreshToken}
       
-
     } catch (error) {
-        // console.log("JWT ERROR:", error) 
-        throw new ApiError(500, "Something went wrong while generating referesh and access token")
-    }
+   console.log("JWT ERROR:", error);
+   throw error;
+}
+    // } catch (error) {
+    //     // console.log("JWT ERROR:", error) 
+    //     throw new ApiError(500, "Something went wrong while generating referesh and access token")
+    // }
 }
 
 const registerUser = asyncHandler(async (req,res)=>{
@@ -249,15 +252,28 @@ const refreshAccessToken = asyncHandler(async (req, res)=>{
             secure :true
         }
     
-        const {accessToken, newRefreshToken } = await generateAccessAndRefereshTokens(User._id)
+        // const {accessToken, newRefreshToken } = await generateAccessAndRefereshTokens(user._id)
+    
+        // return res
+        // .status(200)
+        // .cookie("accessToken",accessToken, options)
+        // .cookie("newRefreshToken", newRefreshToken, options)
+        // .json(
+        //     new ApiResponse(200,
+        //         { accessToken, refreshToken : newRefreshToken},
+        //         "Access Token Refresh"
+    
+        //     )
+        // )
+         const {accessToken, RefreshToken } = await generateAccessAndRefereshTokens(user._id)
     
         return res
         .status(200)
         .cookie("accessToken",accessToken, options)
-        .cookie("newRefreshToken", newRefreshToken, options)
+        .cookie("RefreshToken", RefreshToken, options)
         .json(
             new ApiResponse(200,
-                { accessToken, refreshToken : newRefreshToken},
+                { accessToken, refreshToken : RefreshToken},
                 "Access Token Refresh"
     
             )
@@ -289,14 +305,23 @@ const changeCurrentPassword = asyncHandler(async(req,res)=>{
     .json(new ApiResponse(200,{},"Password Change Successfully"))
 })
 
-const getCurrentUser = asyncHandler(async(req,res) => {
-    return res.status(200).json(
-    new ApiResponse(
-        200,
-        req.user,
-        "current user fetched successfully"
-    )
-)
+// const getCurrentUser = asyncHandler(async(req,res) => {
+//     return res.status(200).json(
+//     new ApiResponse(
+//         200,
+//         { user: req.user },
+//         "current user fetched successfully"
+//     )
+// )
+// })
+const getCurrentUser = asyncHandler(async(req,res)=>{
+    console.log("===== CURRENT USER ROUTE HIT =====");
+    console.log(req.user);
+
+    return res.status(200).json({
+        message: "working",
+        user: req.user
+    });
 })
 
 const updateAccountDetails = asyncHandler(async(req,res)=>{
@@ -307,16 +332,15 @@ const updateAccountDetails = asyncHandler(async(req,res)=>{
     }
 
 const user = await User.findByIdAndUpdate(
-    req.User?._id,
+    req.user?._id,
     {
-        $set :{
-            fullName,   // or can be, fullName : fullName
-            email,      // or can be , email : email
+        $set:{
+            fullName,
+            email
         }
     },
-     {returnDocument: "after"},
-)
-.select("-password")
+    { new: true }
+).select("-password")
 
 return res
 .status(200)
@@ -324,6 +348,8 @@ return res
 
 
 })
+
+// -----Update Avatar ---------------
 
 const updateUserAvatar = asyncHandler (async(req,res)=>{
     const avatarLocalPath = req.file?.path

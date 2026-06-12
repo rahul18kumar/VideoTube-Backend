@@ -7,6 +7,10 @@ import {asyncHandler} from "../utils/asyncHandler.js"
 
 const createTweet = asyncHandler(async (req, res) => {
     // create tweet
+      console.log("BODY =", req.body)
+    console.log("CONTENT =", req.body?.content)
+    console.log("USER =", req.user)
+    
      const { content } = req.body
 
     if (!content || content.trim() === "") {
