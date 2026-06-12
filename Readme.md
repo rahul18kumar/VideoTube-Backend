@@ -48,4 +48,4 @@ Swagger documentation is available at:
 
 https://videotube-backend-vgr5.onrender.com/api-docs
 
-(Currently includes sample documented endpoints and is being expanded.)
+(Currently includes a single endpoint, rest all will be added in future.)
