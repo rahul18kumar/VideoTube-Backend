@@ -41,3 +41,11 @@ https://videotube-backend-vgr5.onrender.com/api/v1
 
 Local:
 http://localhost:8000/api/v1
+
+## API Documentation
+
+Swagger documentation is available at:
+
+https://videotube-backend-vgr5.onrender.com/api-docs
+
+(Currently includes sample documented endpoints and is being expanded.)

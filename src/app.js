@@ -1,6 +1,8 @@
 import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
+import swaggerUi from "swagger-ui-express";
+import swaggerSpec from "../src/docs/swagger.js";
 
 const app = express() 
 
@@ -41,6 +43,10 @@ app.use("/api/v1/subscriptions", subscriptionRouter);
 app.use("/api/v1/tweets", tweetRouter);
 app.use("/api/v1/dashboard", dashboardRouter);
 
-// example: http://localhost:8000/api/v1/users/register
+app.use(
+    "/api-docs",
+    swaggerUi.serve,
+    swaggerUi.setup(swaggerSpec)
+);
 
 export {app}

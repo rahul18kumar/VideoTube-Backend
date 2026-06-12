@@ -28,7 +28,31 @@ router.route("/register").post(
     ]),
     registerUser
 )
-
+/**
+ * @swagger
+ * /users/login:
+ *   post:
+ *     summary: Login User
+ *     description: Authenticate user and return access & refresh tokens
+ *     tags:
+ *       - User
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - username
+ *               - password
+ *             properties:
+ *               username:
+ *                 type: string
+ *                 example: rahul123
+ *               password:
+ *                 type: string
+ *                 example: Password@123
+ */
 router.route("/login").post(loginUser)
 
 //secured routees
