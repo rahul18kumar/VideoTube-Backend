@@ -1,0 +1,1158 @@
+{
+  "info": {
+    "_postman_id": "9cd62404-7db4-4628-beeb-8f7117dae9b0",
+    "name": "Video-Tube",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53591026",
+    "_collection_link": "https://go.postman.co/collection/53591026-9cd62404-7db4-4628-beeb-8f7117dae9b0?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "fullName",
+                  "value": "local",
+                  "type": "text",
+                  "uuid": "58612d4f-0946-4160-a2fd-8896fbc3ceaa"
+                },
+                {
+                  "key": "email",
+                  "value": "local@gmail.com",
+                  "type": "text",
+                  "uuid": "081124e0-8073-4d79-a7c9-a232a945f7ce"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678",
+                  "type": "text",
+                  "uuid": "aa491c8d-6514-4356-919a-7214719e34db"
+                },
+                {
+                  "key": "username",
+                  "value": "local1234",
+                  "type": "text",
+                  "uuid": "c83d50cd-253f-4d5a-ad50-eb5775bc19aa"
+                },
+                {
+                  "key": "avatar",
+                  "type": "file",
+                  "uuid": "5e3b6dfd-3a28-4ba9-9520-0c62f020fa15",
+                  "src": "postman-cloud:///1f164ca2-2102-41d0-a119-53a1336f83f6"
+                },
+                {
+                  "key": "coverImage",
+                  "type": "file",
+                  "uuid": "f368d4d4-0e66-4a60-8b9f-62ead1183474",
+                  "src": "postman-cloud:///1f12d0ac-8b4c-48d0-be3a-3f4d854f9d41"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{server}}/users/register",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "users",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\"local@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server}}/users/login",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "users",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server}}/users/logout",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "users",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "refresh-token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\" : \"one@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}"
+            },
+            "url": {
+              "raw": "{{server}}/users/refresh-token",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "users",
+                "refresh-token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "change-password",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\" : \"one@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}"
+            },
+            "url": {
+              "raw": "{{server}}/users/change-password",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "users",
+                "change-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "current-user",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\" : \"one@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}"
+            },
+            "url": {
+              "raw": "{{server}}/users/current-user",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "users",
+                "current-user"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update-account-detail",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\" : \"one@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}"
+            },
+            "url": {
+              "raw": "{{server}}/users/update-account-detail",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "users",
+                "update-account-detail"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update-avatar",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "avatar",
+                  "type": "file",
+                  "uuid": "91b5217b-3c4a-4694-9120-2726c5f323da",
+                  "src": "postman-cloud:///1f1658ec-bbf2-4860-8cda-f2139cb3f3c7"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{server}}/users/avatar",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "users",
+                "avatar"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update-coverImage",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "coverImage",
+                  "type": "file",
+                  "uuid": "21ca6212-e1aa-4fc7-b97e-894d1555ec27",
+                  "src": "postman-cloud:///1f164ca2-2102-41d0-a119-53a1336f83f6"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{server}}/users/cover-image",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "users",
+                "cover-image"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getUserChannelProfile",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\" : \"one@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}"
+            },
+            "url": {
+              "raw": "{{server}}/users/c/local1234",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "users",
+                "c",
+                "local1234"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "watch-history",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\" : \"one@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}"
+            },
+            "url": {
+              "raw": "{{server}}/users/watch-history",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "users",
+                "watch-history"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "register a user for channelid testing",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "fullName",
+                  "value": "other user",
+                  "type": "text",
+                  "uuid": "f4352d25-e0ac-40d7-baf4-334a0a7d5416"
+                },
+                {
+                  "key": "email",
+                  "value": "other@gmail.com",
+                  "type": "text",
+                  "uuid": "6be4ff33-db97-4ff8-ae35-0fa97b18163a"
+                },
+                {
+                  "key": "password",
+                  "value": "54321",
+                  "type": "text",
+                  "uuid": "cb91d3b4-4152-446f-9d51-a171ba7b1e73"
+                },
+                {
+                  "key": "username",
+                  "value": "other54321",
+                  "type": "text",
+                  "uuid": "210ccf9d-fefd-49fb-bec9-c8b7a88b7adf"
+                },
+                {
+                  "key": "avatar",
+                  "type": "file",
+                  "uuid": "053f7b1c-3485-4302-ac16-a337554d64b8",
+                  "src": "postman-cloud:///1f1658ec-bbf2-4860-8cda-f2139cb3f3c7"
+                },
+                {
+                  "key": "coverImage",
+                  "type": "file",
+                  "uuid": "ca0c8684-7c5f-458a-8553-9886978ba3b5",
+                  "src": "postman-cloud:///1f164ca2-2102-41d0-a119-53a1336f83f6"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{server}}/users/register",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "users",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Health Check",
+      "item": [
+        {
+          "name": "Healthcheck",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/healthcheck",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "healthcheck"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Videos",
+      "item": [
+        {
+          "name": "publish video",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "First video",
+                  "type": "text",
+                  "uuid": "a16008bf-ca60-43e0-a440-d569c8624689"
+                },
+                {
+                  "key": "description",
+                  "value": "Testing Video Upload",
+                  "type": "text",
+                  "uuid": "9042ea28-21d5-48ab-ab4b-b6bce0794d2e"
+                },
+                {
+                  "key": "videoFile",
+                  "type": "file",
+                  "uuid": "fd3bddcc-df5c-4eef-87ca-cba64bc35b4c",
+                  "src": "postman-cloud:///1f165937-23aa-4580-a8e8-cc5ec476d752"
+                },
+                {
+                  "key": "thumbnail",
+                  "type": "file",
+                  "uuid": "fc481e2f-3deb-472c-bc3a-b7300e617f69",
+                  "src": "postman-cloud:///1f165937-d801-4560-b0d8-845ea013b710"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{server}}/videos",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "videos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get all videos",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "First video",
+                  "type": "text",
+                  "uuid": "a16008bf-ca60-43e0-a440-d569c8624689"
+                },
+                {
+                  "key": "description",
+                  "value": "Testing Video Upload",
+                  "type": "text",
+                  "uuid": "9042ea28-21d5-48ab-ab4b-b6bce0794d2e"
+                },
+                {
+                  "key": "videoFile",
+                  "type": "file",
+                  "uuid": "fd3bddcc-df5c-4eef-87ca-cba64bc35b4c",
+                  "src": "postman-cloud:///1f165937-23aa-4580-a8e8-cc5ec476d752"
+                },
+                {
+                  "key": "thumbnail",
+                  "type": "file",
+                  "uuid": "fc481e2f-3deb-472c-bc3a-b7300e617f69",
+                  "src": "postman-cloud:///1f165937-d801-4560-b0d8-845ea013b710"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{server}}/videos",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "videos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get video by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/videos/{{videoId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "videos",
+                "{{videoId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update existing video detail",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "new title of the video ",
+                  "type": "text",
+                  "uuid": "6e4ce215-6919-4524-b2ab-7b179aba29ec"
+                },
+                {
+                  "key": "description",
+                  "value": "new description",
+                  "type": "text",
+                  "uuid": "f214ce63-80f6-451a-8123-c77dde0a9e6b"
+                },
+                {
+                  "key": "thumbnail",
+                  "type": "file",
+                  "uuid": "c6845dcc-81de-425a-a06d-5dc0a0fef926",
+                  "src": "postman-cloud:///1f164ca2-2102-41d0-a119-53a1336f83f6"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{server}}/videos/{{videoId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "videos",
+                "{{videoId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "publish toggle status",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/videos/toggle/publish/{{videoId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "videos",
+                "toggle",
+                "publish",
+                "{{videoId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete video",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/videos/{{videoId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "videos",
+                "{{videoId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "comments",
+      "item": [
+        {
+          "name": "create comment",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"content\": \"Amazing video!\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server}}/comments/{{videoId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "comments",
+                "{{videoId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get comment",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/comments/{{videoId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "comments",
+                "{{videoId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update comment",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"content\" : \"updated somment\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server}}/comments/c/{{commentId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "comments",
+                "c",
+                "{{commentId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete comment",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/comments/c/{{commentId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "comments",
+                "c",
+                "{{commentId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Likes",
+      "item": [
+        {
+          "name": "Toggle Video like",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/likes/toggle/v/{{videoId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "likes",
+                "toggle",
+                "v",
+                "{{videoId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Toggle Comment Like",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/likes/toggle/c/{{commentId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "likes",
+                "toggle",
+                "c",
+                "{{commentId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Toggle Tweet Like",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/likes/toggle/t/{{tweetId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "likes",
+                "toggle",
+                "t",
+                "{{tweetId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Liked Videos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/likes/videos",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "likes",
+                "videos"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Playlist",
+      "item": [
+        {
+          "name": "create new playlist",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Java Backend Playlist\",\r\n  \"description\": \"Playlist for backend tutorials\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server}}/playlists/",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "playlists",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Playlist By ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Java Backend Playlist\",\r\n  \"description\": \"Playlist for backend tutorials\"\r\n}"
+            },
+            "url": {
+              "raw": "{{server}}/playlists/{{playlistId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "playlists",
+                "{{playlistId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Playlist",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Updated Playlist\",\r\n  \"description\": \"Updated Description\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server}}/playlists/{{playlistId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "playlists",
+                "{{playlistId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Playlist",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Updated Playlist\",\r\n  \"description\": \"Updated Description\"\r\n}"
+            },
+            "url": {
+              "raw": "{{server}}/playlists/{{playlistId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "playlists",
+                "{{playlistId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remove video form playlist",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/playlists/remove/{{videoId}}/{{playlistId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "playlists",
+                "remove",
+                "{{videoId}}",
+                "{{playlistId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Video To Playlist",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Updated Playlist\",\r\n  \"description\": \"Updated Description\"\r\n}"
+            },
+            "url": {
+              "raw": "{{server}}/playlists/add/{{videoId}}/{{playlistId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "playlists",
+                "add",
+                "{{videoId}}",
+                "{{playlistId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get user playlist",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/playlists/user/{{userId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "playlists",
+                "user",
+                "{{userId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Subscription",
+      "item": [
+        {
+          "name": "Toggle Subscription",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/subscriptions/c/{{channelId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "subscriptions",
+                "c",
+                "{{channelId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all  Subscribers of a Channel",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/subscriptions/c/{{channelId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "subscriptions",
+                "c",
+                "{{channelId}}"
+              ]
+            },
+            "description": "List of all subscribers of this channel"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Channels Subscribed By User",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/subscriptions/u/{{subscriberId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "subscriptions",
+                "u",
+                "{{subscriberId}}"
+              ]
+            },
+            "description": "channel that is subscribed by user, it means userId= subscribedid"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "item": [
+        {
+          "name": "get full dashboard stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/dashboard/stats",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "dashboard",
+                "stats"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get channel  videos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/dashboard/videos",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "dashboard",
+                "videos"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Tweet apis",
+      "item": [
+        {
+          "name": "Create tweet",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"content\": \"My first tweet\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server}}/tweets/",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "tweets",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all tweets",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/tweets/user/{{userId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "tweets",
+                "user",
+                "{{userId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update tweet",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"content\" :\" updated tweet\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server}}/tweets/{{tweetId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "tweets",
+                "{{tweetId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete tweet",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/tweets/{{tweetId}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "tweets",
+                "{{tweetId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

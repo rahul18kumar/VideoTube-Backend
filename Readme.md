@@ -1,20 +1,43 @@
-VideoTube is a backend system that provides APIs for:
+# VideoTube Backend
 
--- User Management
--- Authentication
--- Video Uploads
--- Comments
--- Likes
--- Playlists
--- Subscriptions
--- Watch History
+A production-ready YouTube-inspired backend built using Node.js, Express.js, MongoDB, JWT Authentication, Cloudinary and Mongoose.
 
-Deployed on Render successfully 
+## Features
 
-- [Deployed Link](https://videotube-backend-vgr5.onrender.com)
+- User Authentication & Authorization
+- JWT Access & Refresh Token System
+- Video Upload & Management
+- Cloudinary Media Storage
+- Comments System
+- Likes System
+- Playlist Management
+- Channel Subscriptions
+- Watch History Tracking
+- Dashboard Analytics
+- RESTful API Architecture
+- Error Handling & Validation
+- Protected Routes with Middleware
 
-# Some important links
+## Project Statistics
 
+- 7 Database Models
+- 9 Controllers
+- 9 Route Modules
+- 40+ REST APIs
+- JWT Authentication
+- Cloudinary Integration
+- MongoDB Atlas Database
+- Render Deployment
+- Complete Postman Testing
 
-- [ Model link](https://app.eraser.io/workspace/YtPqZ1VogxGy1jzIDkzj) 
+## Live Deployment
 
+https://videotube-backend-vgr5.onrender.com
+
+## API Base URL
+
+Production:
+https://videotube-backend-vgr5.onrender.com/api/v1
+
+Local:
+http://localhost:8000/api/v1
